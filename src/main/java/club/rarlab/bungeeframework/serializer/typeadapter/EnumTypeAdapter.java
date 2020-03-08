@@ -17,7 +17,6 @@ import java.util.Map;
  * @author SavageLabs {@code https://github.com/SavageLabs}
  */
 public final class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
-
     public static final TypeAdapterFactory ENUM_FACTORY = newEnumTypeHierarchyFactory();
     private final Map<String, T> nameToConstant = new HashMap<>();
     private final Map<T, String> constantToName = new HashMap<>();
@@ -33,9 +32,7 @@ public final class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
                 nameToConstant.put(name, constant);
                 constantToName.put(constant, name);
             }
-        } catch (NoSuchFieldException e) {
-            // ignore since it could be a modified enum
-        }
+        } catch (NoSuchFieldException e) {}
     }
 
     public static <TT> TypeAdapterFactory newEnumTypeHierarchyFactory() {
@@ -47,7 +44,7 @@ public final class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
                     return null;
                 }
                 if (!rawType.isEnum()) {
-                    rawType = rawType.getSuperclass(); // handle anonymous subclasses
+                    rawType = rawType.getSuperclass();
                 }
                 return (TypeAdapter<T>) new EnumTypeAdapter(rawType);
             }
@@ -65,5 +62,4 @@ public final class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
     public void write(JsonWriter out, T value) throws IOException {
         out.value(value == null ? null : constantToName.get(value));
     }
-
 }
