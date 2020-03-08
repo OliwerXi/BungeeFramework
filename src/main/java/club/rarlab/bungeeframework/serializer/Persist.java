@@ -1,10 +1,9 @@
 package club.rarlab.bungeeframework.serializer;
 
 import club.rarlab.bungeeframework.BungeePlugin;
+import club.rarlab.bungeeframework.serializer.typeadapter.EnumTypeAdapter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import net.prosavage.baseplugin.serializer.typeadapter.EnumTypeAdapter;
 
 import java.io.File;
 import java.lang.reflect.Modifier;
