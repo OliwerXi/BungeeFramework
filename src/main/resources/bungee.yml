@@ -1,0 +1,5 @@
+name: BungeeFramework
+version: 1.0.0
+authors: [SavageLabs, RarLab]
+description: Simple and useful framework for bungee plugins.
+main: club.rarlab.bungeeframework.BungeePlugin

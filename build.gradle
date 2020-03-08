@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'club.rarlab'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly ('net.md-5:bungeecord-api:1.15-SNAPSHOT') {
+        exclude group: 'com.google.code.gson'
+    }
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'org.jetbrains:annotations:19.0.0'
+}
