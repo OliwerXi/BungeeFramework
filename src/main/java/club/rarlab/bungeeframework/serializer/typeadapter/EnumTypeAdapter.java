@@ -1,4 +1,4 @@
-package net.prosavage.baseplugin.serializer.typeadapter;
+package club.rarlab.bungeeframework.serializer.typeadapter;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
