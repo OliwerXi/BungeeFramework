@@ -13,7 +13,7 @@ public class BungeePlugin extends Plugin {
     @Override
     public void onEnable() {
         instance = this;
-        this.getDataFolder().mkdirs();
+        getDataFolder().mkdirs();
         persist = new Persist();
     }
 
